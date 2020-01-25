@@ -32,10 +32,7 @@ public class BookDetailActivity extends AppCompatActivity {
         dbManager = new DBManager(this, DBManager.DATABASE_NAME,
                 null, DBManager.DATABASE_VERSION);
 
-        titleET = findViewById(R.id.titleEditText);
-        authorET = findViewById(R.id.authorEditText);
-        publisherET = findViewById(R.id.publisherEditText);
-        genreET = findViewById(R.id.genreEditText);
+        initEditTexts();
 
         loadData();
 
@@ -50,6 +47,12 @@ public class BookDetailActivity extends AppCompatActivity {
         });
     }
 
+    void initEditTexts() {
+        titleET = findViewById(R.id.titleEditText);
+        authorET = findViewById(R.id.authorEditText);
+        publisherET = findViewById(R.id.publisherEditText);
+        genreET = findViewById(R.id.genreEditText);
+    }
 
     void saveBook() {
 
@@ -90,5 +93,4 @@ public class BookDetailActivity extends AppCompatActivity {
             genreET.setText(book.getAsString(DBManager.GENRE_COL));
         }
     }
-
 }
