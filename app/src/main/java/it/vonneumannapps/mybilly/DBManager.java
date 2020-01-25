@@ -20,7 +20,8 @@ public class DBManager extends SQLiteOpenHelper {
     public static final String PUBLISHER_COL = "editore";
     public static final String GENRE_COL = "genere";
 
-    public DBManager(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public DBManager(@Nullable Context context, @Nullable String name,
+                     @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
@@ -68,21 +69,17 @@ public class DBManager extends SQLiteOpenHelper {
         }
 
         return books;
-
     }
 
 
     void deleteBook(ContentValues book) {
-
         try(SQLiteDatabase db = getWritableDatabase()) {
 
             db.delete("books", "id = ?", new String[] {book.getAsInteger("id").toString()});
         }
-
     }
 
     void deleteAllBooks() {
-
         try(SQLiteDatabase db = getWritableDatabase()) {
 
             db.delete("books", "", null);
@@ -91,7 +88,6 @@ public class DBManager extends SQLiteOpenHelper {
 
 
     void insertBook(ContentValues book) {
-
         try(SQLiteDatabase db = getWritableDatabase()) {
 
             db.insert("books", null, book);
@@ -99,10 +95,10 @@ public class DBManager extends SQLiteOpenHelper {
     }
 
     void updateBook(ContentValues book) {
-
         try(SQLiteDatabase db = getWritableDatabase()) {
 
-            db.update("books", book, "id = ?", new String[] {book.getAsInteger("id").toString()});
+            db.update("books", book, "id = ?",
+                    new String[] {book.getAsInteger("id").toString()});
         }
     }
 }
