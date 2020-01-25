@@ -47,7 +47,10 @@
             <EditText
                 android:id="@+id/titleEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -59,7 +62,10 @@
             <EditText
                 android:id="@+id/genreEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,7 +77,10 @@
             <EditText
                 android:id="@+id/authorEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,7 +92,10 @@
             <EditText
                 android:id="@+id/publisherEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                />
 
             <Button
                 android:id="@+id/saveButton"
