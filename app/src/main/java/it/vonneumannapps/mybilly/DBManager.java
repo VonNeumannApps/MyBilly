@@ -71,11 +71,11 @@ public class DBManager extends SQLiteOpenHelper {
         return books;
     }
 
-
     void deleteBook(ContentValues book) {
         try(SQLiteDatabase db = getWritableDatabase()) {
 
-            db.delete("books", "id = ?", new String[] {book.getAsInteger("id").toString()});
+            db.delete("books", "id = ?",
+                    new String[] {book.getAsInteger("id").toString()});
         }
     }
 

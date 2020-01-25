@@ -29,7 +29,8 @@ public class BookDetailActivity extends AppCompatActivity {
 
         book = getIntent().getParcelableExtra(EXTRA_BOOK_PARAM_NAME);
 
-        dbManager = new DBManager(this, DBManager.DATABASE_NAME, null, DBManager.DATABASE_VERSION);
+        dbManager = new DBManager(this, DBManager.DATABASE_NAME,
+                null, DBManager.DATABASE_VERSION);
 
         titleET = findViewById(R.id.titleEditText);
         authorET = findViewById(R.id.authorEditText);
@@ -79,7 +80,6 @@ public class BookDetailActivity extends AppCompatActivity {
 
         finish();
     }
-
 
     void loadData() {
 

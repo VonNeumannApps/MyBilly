@@ -148,8 +148,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        dbManager = new DBManager(this, DBManager.DATABASE_NAME, null, DBManager.DATABASE_VERSION);
+        //NB: each activity has its own db manager instance
+        dbManager = new DBManager(this, DBManager.DATABASE_NAME,
+                null, DBManager.DATABASE_VERSION);
 
         initializeAdapter();
         loadBooks();
